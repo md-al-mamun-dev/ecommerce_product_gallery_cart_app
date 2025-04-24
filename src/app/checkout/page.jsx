@@ -3,7 +3,8 @@
 import PlaceOrder from './PlaceOrder'
 import ProductList from './ProductList'
 import PricingSummery from './PricingSummery'
-import UserInputform from './UserInputform'
+import InputForm from './InputForm'
+
 
 
 export default async function page() {
@@ -14,7 +15,7 @@ export default async function page() {
                 {/* <!-- Contact form --> */}
                 <div className="bg-white rounded-lg shadow p-6 mb-6">
                     <h3 className="text-lg font-semibold mb-4">Please Provide Information</h3>
-                    <UserInputform/>                    
+                    <InputForm/>                    
                 </div>
             </div>
 
