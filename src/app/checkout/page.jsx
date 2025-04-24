@@ -1,15 +1,16 @@
-import React from 'react'
-import UserInputform from './UserInputform'
+
+"use server"
 import PlaceOrder from './PlaceOrder'
 import ProductList from './ProductList'
 import PricingSummery from './PricingSummery'
-import WaitingPopup from './WaitingPopup'
+import UserInputform from './UserInputform'
 
-export default function page() {
+
+export default async function page() {
   return (
     <div className='container mx-auto px-4 py-8 max-w-7xl'>
         <div className="flex flex-col lg:flex-row gap-8">
-            <div className="lg:w-2/3">                
+            <div className="lg:w-2/3">               
                 {/* <!-- Contact form --> */}
                 <div className="bg-white rounded-lg shadow p-6 mb-6">
                     <h3 className="text-lg font-semibold mb-4">Please Provide Information</h3>
