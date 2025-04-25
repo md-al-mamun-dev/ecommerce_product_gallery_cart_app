@@ -65,48 +65,26 @@ export default async function Page({ params }) {
   }
 }
 
+
+
 async function getProductDetails(id) {
   try {
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-
     const response = await fetch('https://admin.refabry.com/api/all/product/get');
-
+    
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
     const result = await response.json();
     const product = result.data.data.find((item) => item.id == id);
-
+    
     if (!product) {
-      return null;
+      return null; // Triggers notFound()
     }
-
+    
     return product;
   } catch (error) {
     console.error('Fetch error:', error);
-    throw error;
+    throw error; // Will be caught in the component's try/catch
   }
 }
-
-// async function getProductDetails(id) {
-//   try {
-//     const response = await fetch('https://admin.refabry.com/api/all/product/get');
-    
-//     if (!response.ok) {
-//       throw new Error(`HTTP error! status: ${response.status}`);
-//     }
-
-//     const result = await response.json();
-//     const product = result.data.data.find((item) => item.id == id);
-    
-//     if (!product) {
-//       return null; // Triggers notFound()
-//     }
-    
-//     return product;
-//   } catch (error) {
-//     console.error('Fetch error:', error);
-//     throw error; // Will be caught in the component's try/catch
-//   }
-// }
