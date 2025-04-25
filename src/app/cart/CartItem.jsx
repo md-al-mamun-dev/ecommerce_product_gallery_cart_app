@@ -4,13 +4,12 @@ import { useDispatch } from "react-redux"
 import { removeFromCart, incrementQuentity, decrementQuentity } from "@/lib/redux/features/cart/cartSlice"
 
 export default function CartItem({data}) {
-    const ImageBaseUrl = "https://admin.refabry.com/storage/product/"
     const dispatch = useDispatch()
-
     const { id, price, image, quantity, totalItemPrice } = data;
+
   return (
     <div className="flex items-center bg-white dark:bg-gray-800 shadow rounded-xl p-4 gap-4">
-        <Image src={ImageBaseUrl + image} alt="Product" width={100} height={100} className="w-24 h-24 rounded-lg" />
+        <Image src={process.env.NEXT_PUBLIC_BACKEND_URL+'/storage/product/'+image} alt="Product" width={100} height={100} className="w-24 h-24 rounded-lg" />
         <div className="flex-1">
             <h2 className="text-lg font-semibold">Wireless Headphones</h2>
             <div>

@@ -6,19 +6,13 @@ import Image from "next/image"
 
 export default function MiniCartItem({data}) {
     const { name, quantity , totalItemPrice, price } = data 
-    const ImageBaseUrl = "https://admin.refabry.com/storage/product/"
     const dispatch = useDispatch()
     
     return (
       <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2 mr-2">
-              <Image 
-                  src={ImageBaseUrl+data.image} 
-                  alt={name} 
-                  width={50} 
-                  height={50} 
-                  className="w-12 h-12 rounded-lg object-cover"
-              />
+              <Image src={process.env.NEXT_PUBLIC_BACKEND_URL+'/storage/product/'+data.image}
+                  alt={name} width={50} height={50} className="w-12 h-12 rounded-lg object-cover"/>
             </div>
           <div>
               <p className="text-sm font-medium text-gray-700 dark:text-gray-200">

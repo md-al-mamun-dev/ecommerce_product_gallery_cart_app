@@ -3,15 +3,13 @@ import ProductCardLoadingSkeleton from "./ProductCardLoadingSkeleton"
 import Link from "next/link";
 
 export default function ProductCard({data}) {
-
-  const ImageBaseUrl = "https://admin.refabry.com/storage/product/"
   const { image,  price, discount_amount, name, is_discount,  category } = data;
 
   return (
     <Link href={`/products/${data.id}`} target="_blank"  className="w-full">
       <div className="bg-white rounded-2xl  shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
           <div className="w-full h-64 relative">
-            <Image alt="product image"  src={ ImageBaseUrl + image } className="w-full  object-cover " fill/>        
+            <Image alt="product image"  src={ process.env.NEXT_PUBLIC_BACKEND_URL+'/storage/product/'+image } className="w-full  object-cover " fill/>        
           {
             is_discount != 0
             &&  <div className="absolute bottom-2 bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded-r-md shadow-md">
