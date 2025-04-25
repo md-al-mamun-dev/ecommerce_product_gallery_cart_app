@@ -1,43 +1,19 @@
 "use client"
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts } from "../redux/features/product/productSlice";
+import { fetchProductDetails } from "../redux/features/product/productSlice";
 
-
-export default function useProduct() {
-    const [path, setPath] = useState('/all/product/get');
+export default function useProductDetails(id) {
     const dispatch = useDispatch();
-    const { data, loading, error } = useSelector((state) => state.product);
-
-    function prevPage() {
-        if (!data?.next_page_url) {
-            return
-        }
-        setPath(data?.prev_page_url.replace("https://admin.refabry.com/api/all", ""));  
-    }
-
-    function nextPage() {
-        if (!data?.next_page_url) {
-            return
-        }
-        setPath(data?.next_page_url).replace("https://admin.refabry.com/api/all", "");       
-    }
-
-    function moveToPageWithPageNumber(page){
-        setPath(`/all/product/get?page=${page}`)
-
-    }
+    const { product, loading, error } = useSelector((state) => state.product);
     
     useEffect(() => {
-        dispatch(fetchProducts({path}));
-    }, [dispatch, path]);
+        dispatch(fetchProductDetails(id));
+    }, [dispatch, id]);
     
     return { 
-            data: data, 
-            loading, 
-            error,  
-            fetchPreviousPage: prevPage,
-            fetchNextPage: nextPage,
-            goTo: moveToPageWithPageNumber
+            data: product,
+            loading:loading, 
+            error:error,
         };
 }

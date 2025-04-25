@@ -9,8 +9,7 @@ export default function ProductLoadingError() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                 d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
           </svg>
-        </div>
-        
+        </div>        
         <h3 className="text-xl font-semibold text-gray-800">Failed to Load Products</h3>
         <p className="text-gray-600 max-w-md">
           We're having trouble loading products right now. Please check your internet connection or try again later.

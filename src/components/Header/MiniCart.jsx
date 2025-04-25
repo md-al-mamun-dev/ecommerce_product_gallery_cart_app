@@ -3,12 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import MiniCartItem from "./MiniCartItem";
 import { useRouter } from "next/navigation";
 import { closeMiniCart } from "@/lib/redux/features/control/controlSlice";
+import { clearCart } from "@/lib/redux/features/cart/cartSlice"
 
-export default function MiniCart() {
-    const dispatch = useDispatch();
+export default function MiniCart() {    
     const { items, totalPrice } = useSelector((state) => state.cart);
     const { showMiniCart } = useSelector((state) => state.control);
+
     const router = useRouter();
+    const dispatch = useDispatch();
     
     function gotoCartButtonClick(params) {
       dispatch(closeMiniCart())
@@ -20,7 +22,10 @@ export default function MiniCart() {
         <div className="absolute top-6 -right-4 w-100 bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-4 z-50 animate-slideInFade">
           <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100">Your Cart Summery</h2>
-              <button className="text-sm text-red-500 hover:underline">Clear</button>
+              { items.length > 0 
+                  && <button onClick={()=>dispatch(clearCart())} className="text-sm text-red-500 hover:underline">Clear</button>
+              }
+              
           </div>
 
           <div className="space-y-3 max-h-48 overflow-y-auto">

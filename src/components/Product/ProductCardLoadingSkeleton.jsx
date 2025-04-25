@@ -1,4 +1,3 @@
-
 export default function ProductCardLoadingSkeleton() {
   return (
     <div className="w-56 bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">

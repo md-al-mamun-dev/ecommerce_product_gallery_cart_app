@@ -2,7 +2,7 @@
 import { useState, useRef } from "react"
 import Image from "next/image";
 
-export default function ImageGallery({discount, images, productName}) {
+export default function ImageGallery({images, productName}) {
     const [activeImage, setActiveImage] = useState(images[0]);
     const sliderRef = useRef(null);
 
@@ -15,6 +15,7 @@ export default function ImageGallery({discount, images, productName}) {
           sliderRef.current.scrollLeft += e.deltaY;
         }
       };
+      
   return (
     <div className="space-y-4 ">
     <div  className="w-full h-96 bg-gray-100 rounded-xl overflow-hidden relative ">

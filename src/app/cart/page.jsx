@@ -1,4 +1,3 @@
-import React from 'react'
 import CartGallery from './CartGallery'
 import CartSummery from './CartSummery'
 import ClearCartButton from './ClearCartButton'
@@ -9,7 +8,7 @@ export default function page() {
   return (
     <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
       <div className="md:col-span-2 space-y-6">
-        <div className=' sm:flex'> 
+        <div className=' sm:flex pl-4 sm:pl-6 lg:pl-8 xl:pl-0'> 
             <h1 className="text-3xl font-bold">Your Cart</h1>
             <ClearCartButton/>
         </div>

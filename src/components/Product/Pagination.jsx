@@ -1,10 +1,9 @@
 "use client"
 import PaginationLoadingSkeleton from "./PaginationLoadingSkeleton"
-import useProduct from "@/lib/hooks/useProduct";
+import useProducts from "@/lib/hooks/useProducts";
 
-export default function Pagination({data, loading, error}) {
-  const { fetchPreviousPage, fetchNextPage, goTo } = useProduct();
-  const { current_page = 1, per_page = 10, total = 0 } = data || {};
+export default function Pagination({ loading, error}) {
+  const { current_page, per_page, total, fetchPreviousPage, fetchNextPage, goTo } = useProducts();
   const pageCount = total > per_page ? Math.ceil(total/per_page) : 1
 
   if (loading) return <PaginationLoadingSkeleton />;
@@ -13,16 +12,15 @@ export default function Pagination({data, loading, error}) {
   return (
     <div className="flex items-center justify-between border-t border-gray-200 px-4 py-3 sm:px-6">
       <div className="flex flex-1 justify-between sm:hidden">
-        {current_page > 1 && (
-          <button onClick={fetchPreviousPage} className="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">
-            Previous
-          </button>
-        )}
-        {current_page < pageCount && (
-          <button onClick={fetchNextPage} className="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">
-            Next
-          </button>
-        )}
+        {current_page > 1 
+          && (<button onClick={fetchPreviousPage} className="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">
+                Previous
+              </button>)}
+              
+        {current_page < pageCount 
+          && (<button onClick={fetchNextPage} className="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">
+                Next
+              </button>)}
       </div>
 
       <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
