@@ -2,6 +2,7 @@ import Link from "next/link";
 import ImageGallery from "./ImageGallery";
 import AddToCartButton from "./AddToCartButton";
 import QuentitySelector from "./QuentitySelector";
+import ReloadButton from "@/components/PageReloadButton";
 import { notFound } from 'next/navigation';
 
 export default async function Page({ params }) {
@@ -52,6 +53,7 @@ export default async function Page({ params }) {
         <p className="text-gray-600 mb-6">
           We're having trouble loading this product. Please try again later.
         </p>
+        <ReloadButton/>
         <Link
           href="/"
           className="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full text-sm font-medium transition"
