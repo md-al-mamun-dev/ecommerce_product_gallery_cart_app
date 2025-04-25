@@ -11,7 +11,7 @@ export default async function Page({ params }) {
     const product = await getProductDetails(id);
 
     if (!product) {
-      notFound(); // This will show your not-found.tsx page
+      notFound();
     }
 
     const { name, short_desc, is_discount, price, discount_amount, product_images } = product;
@@ -67,22 +67,46 @@ export default async function Page({ params }) {
 
 async function getProductDetails(id) {
   try {
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
     const response = await fetch('https://admin.refabry.com/api/all/product/get');
-    
+
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
     const result = await response.json();
     const product = result.data.data.find((item) => item.id == id);
-    
+
     if (!product) {
-      return null; // Triggers notFound()
+      return null;
     }
-    
+
     return product;
   } catch (error) {
     console.error('Fetch error:', error);
-    throw error; // Will be caught in the component's try/catch
+    throw error;
   }
 }
+
+// async function getProductDetails(id) {
+//   try {
+//     const response = await fetch('https://admin.refabry.com/api/all/product/get');
+    
+//     if (!response.ok) {
+//       throw new Error(`HTTP error! status: ${response.status}`);
+//     }
+
+//     const result = await response.json();
+//     const product = result.data.data.find((item) => item.id == id);
+    
+//     if (!product) {
+//       return null; // Triggers notFound()
+//     }
+    
+//     return product;
+//   } catch (error) {
+//     console.error('Fetch error:', error);
+//     throw error; // Will be caught in the component's try/catch
+//   }
+// }

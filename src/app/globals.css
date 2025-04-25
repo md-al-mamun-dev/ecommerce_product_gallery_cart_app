@@ -72,9 +72,6 @@ body {
   color: #ff4444;
 }
 
-
-
-
 @keyframes slideInFade {
   0% {
     opacity: 0;
@@ -85,10 +82,19 @@ body {
     transform: translateY(0) translateX(0);
   }
 }
+@keyframes pulse {
+  0%, 100% { opacity: 1 }
+  50% { opacity: 0.5 }
+}
+
 .animate-slideInFade {
   animation: slideInFade 0.4s ease-out forwards;
 }
 
+[data-skeleton] {
+  animation: pulse 1.5s ease-in-out infinite;
+  background: #e5e7eb;
+}
 
 .marker-class{
   border: 1px solid red;
