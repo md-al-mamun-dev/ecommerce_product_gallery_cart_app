@@ -2,12 +2,17 @@ import Link from "next/link";
 import ImageGallery from "./ImageGallery";
 import AddToCartButton from "./AddToCartButton";
 import QuentitySelector from "./QuentitySelector";
-import { fetchProductById } from "@/lib/redux/features/product/productSlice";
+
+
+
+
 
 export default async function page({ params }) {
     const { id } = await params
-    const product = await fetchProductById(id);
-    const { name, short_desc, is_discount, price,  discount_amount, product_images } = product;
+    const product = await getProductDetails(id)
+
+
+    const {id:product_id,  name, short_desc, is_discount, price,  discount_amount, product_images } = product;
     if (!product) {
         return (
             <div className="flex flex-col items-center justify-center min-h-[60vh] text-center px-4">
@@ -62,4 +67,9 @@ export default async function page({ params }) {
       );
 }
 
-
+export const dynamic = 'force-dynamic'
+async function getProductDetails(id) {
+  const response = await fetch('https://admin.refabry.com/api/all/product/get', { cache: 'no-store' });
+  const result = await response.json()
+  return result.data.data.find((item) => item.id == id)
+}
