@@ -14,9 +14,7 @@ export default function PlaceOrder() {
     const { items,
             totalQuantity,
             totalPrice,
-            tax,
-            deliveryOption
-          } = useSelector((state) => state.cart);
+            deliveryOption } = useSelector((state) => state.cart);
     const dispatch = useDispatch()
     const router = useRouter()
 

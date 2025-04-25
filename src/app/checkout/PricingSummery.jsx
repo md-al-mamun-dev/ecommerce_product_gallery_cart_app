@@ -2,13 +2,8 @@
 import { useSelector } from "react-redux";
 
 export default function PricingSummery() {
-    const {
-        items,
-        totalQuantity,
-        totalPrice,
-        deliveryOption,
-        tax
-     } = useSelector((state) => state.cart);
+    const {     totalPrice,
+                deliveryOption } = useSelector((state) => state.cart);
   return (
     <>
         <div className="flex justify-between mb-2">

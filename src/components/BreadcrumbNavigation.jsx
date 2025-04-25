@@ -1,4 +1,4 @@
-
+import Link from "next/link"
 
 export default function BreadcrumbNavigation() {
   return (
@@ -6,10 +6,10 @@ export default function BreadcrumbNavigation() {
   <ol className="inline-flex items-center space-x-1 md:space-x-3">
     
     <li className="inline-flex items-center">
-      <a href="/" className="inline-flex items-center text-gray-500 hover:text-red-600 transition">
+      <Link href="/" className="inline-flex items-center text-gray-500 hover:text-red-600 transition">
         <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L2 9h3v7h4v-4h2v4h4V9h3L10 2z" /></svg>
         Home
-      </a>
+      </Link>
     </li>
 
     <li>
@@ -25,8 +25,6 @@ export default function BreadcrumbNavigation() {
         <a href="/category/jackets" className="text-gray-500 hover:text-red-600 transition">Jackets</a>
       </div>
     </li>
-
-
 
   </ol>
 </nav>

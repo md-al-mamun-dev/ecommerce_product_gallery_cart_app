@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function ProductCard({data}) {
 
   const ImageBaseUrl = "https://admin.refabry.com/storage/product/"
-  const { product_images, image,  price, discount_amount, name, is_discount,  category  } = data;
+  const { image,  price, discount_amount, name, is_discount,  category } = data;
 
   return (
     <Link href={`/products/${data.id}`} target="_blank"  className="w-full">
@@ -29,9 +29,7 @@ export default function ProductCard({data}) {
                     <span className="text-red-600 font-bold">{'৳' + (price - discount_amount) }</span>
                   </div>
               : <p className="mt-2 text-red-600 font-bold ml-auto text-right">{'৳'+price}</p>
-
-          }
-          
+          }          
         </div>
       </div>
     </Link>

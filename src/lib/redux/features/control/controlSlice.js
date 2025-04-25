@@ -17,17 +17,19 @@ const controlSlice = createSlice({
         toggleMiniCart(state) {
             state.showMiniCart = !state.showMiniCart;
         },
-
         openWaitingPopup(state){
             state.showWaiting = true;
         },
         closeWaitingPopup(state){
             state.showWaiting = false;
         }
-
     },
 
 })
 
-export const { openMiniCart, closeMiniCart, toggleMiniCart, openWaitingPopup, closeWaitingPopup } = controlSlice.actions;
+export const {  openMiniCart, 
+                closeMiniCart, 
+                toggleMiniCart, 
+                openWaitingPopup, 
+                closeWaitingPopup } = controlSlice.actions;
 export default controlSlice.reducer;

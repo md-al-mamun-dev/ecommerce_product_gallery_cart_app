@@ -3,8 +3,7 @@ import Image from "next/image"
 
 export default function ProductItem({data}) {
     const ImageBaseUrl = "https://admin.refabry.com/storage/product/"
-    const { id, name, price, image, quantity, totalItemPrice
-    } = data;
+    const { name, price, image, quantity, totalItemPrice } = data;
   return (
     <div className="flex justify-between ">
         <div className="flex items-center">

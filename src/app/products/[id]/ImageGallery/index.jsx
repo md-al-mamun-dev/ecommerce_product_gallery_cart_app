@@ -1,6 +1,5 @@
 "use client"
 import { useState, useRef } from "react"
-
 import Image from "next/image";
 
 export default function ImageGallery({discount, images, productName}) {
@@ -20,7 +19,7 @@ export default function ImageGallery({discount, images, productName}) {
   return (
     <div className="space-y-4 ">
     <div  className="w-full h-96 bg-gray-100 rounded-xl overflow-hidden relative ">
-        <Image className="object-contain" src={ImageBaseUrl+activeImage.name} alt={productName} fill/>
+        <Image className="object-contain" src={ImageBaseUrl+activeImage.name} alt={`${productName} Image`} fill/>
     </div>
 
     <div onWheel={handleWheel} ref={sliderRef} className="w-full max-w-screen flex overflow-x-auto space-x-4 scrollbar-hide px-8 py-2 scroll-smooth no-scrollbar" style={{ WebkitOverflowScrolling: 'touch' }}>

@@ -51,5 +51,8 @@ const userInfoSlice = createSlice({
 
 })
 
-export const { setError, setValue, removeFieldError, setAllError } = userInfoSlice.actions;
+export const {  setError, 
+                setValue, 
+                removeFieldError, 
+                setAllError     } = userInfoSlice.actions;
 export default userInfoSlice.reducer;

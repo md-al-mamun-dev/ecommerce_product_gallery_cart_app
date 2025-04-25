@@ -1,5 +1,4 @@
 "use client"
-import { useState } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
 import { incrementCurrentQuantity, decrementCurrentQuantity } from '@/lib/redux/features/cart/cartSlice';
 
@@ -32,11 +31,16 @@ export default function QuentitySelector({price, discount, isDiscount }) {
             <div className="flex items-center space-x-3 ml-4 ">
                 {
                     isDiscount 
-                        ? <><span className="ml-4 text-2xl font-bold text-red-600 ">${((price * currentItemQuentity)-(discount* currentItemQuentity))}</span>
-                            <span className="text-sm line-through text-gray-400">${price * currentItemQuentity}</span></>
-                        : <span className="ml-4 text-2xl font-bold text-red-600 ">${(price * currentItemQuentity)}</span>
+                        ? <><span className="ml-4 text-2xl font-bold text-red-600 ">
+                              ${((price * currentItemQuentity)-(discount* currentItemQuentity))}
+                            </span>
+                            <span className="text-sm line-through text-gray-400">
+                              ${price * currentItemQuentity}
+                            </span></>
+                        : <span className="ml-4 text-2xl font-bold text-red-600 ">
+                            ${(price * currentItemQuentity)}
+                          </span>
                 }
-                
             </div>
       </div>
     );

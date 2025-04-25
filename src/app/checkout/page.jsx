@@ -25,16 +25,14 @@ export default async function page() {
                     <h2 className="text-xl font-bold mb-6">Order summary</h2>
                     
                     <div className="space-y-4 mb-6">
-                        <ProductList/>
-                        
+                        <ProductList/>                        
                     </div>
                     
                     <div className="border-t pt-4 mb-6">
                         <PricingSummery/>
                     </div>
                     
-                    <PlaceOrder/>
-                    
+                    <PlaceOrder/>                    
                     <div className="mt-4 text-center text-xs text-gray-500">
                         <p className="mb-1"><i className="fas fa-lock mr-1"></i> Secure checkout</p>
                         <p>All transactions are encrypted and secure</p>

@@ -1,23 +1,16 @@
 "use client"
-import Modal from "@/components/Modal";
-import { useState , useEffect} from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { closeWaitingPopup } from "@/lib/redux/features/control/controlSlice";
+import { useEffect} from "react";
+import { useSelector } from "react-redux";
 
 
 export default function WaitingPopup() {
-  // const [showModal, setShowModal] = useState(true);
-  const dispatch = useDispatch()
   const { showWaiting } = useSelector((state) => state.control);
 
   useEffect(() => {
     if (showWaiting) document.body.style.overflow = "hidden";
     else document.body.style.overflow = "auto";
   }, [showWaiting]);
-
   if (!showWaiting) return null;
-
-
 
   return (
   <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
@@ -32,7 +25,3 @@ export default function WaitingPopup() {
       
   );
 }
-
-{/* <Modal show={showWaiting} onClose={() => dispatch(closeWaitingPopup())}>
-        
-        </Modal> */}

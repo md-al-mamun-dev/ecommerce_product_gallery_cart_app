@@ -3,10 +3,8 @@ import { useSelector } from "react-redux"
 import Link from "next/link";
 
 export default function OrderPlaceButton() {
-    const {
-        totalQuantity,
-        deliveryOption
-     } = useSelector((state) => state.cart);
+    const { totalQuantity,
+            deliveryOption } = useSelector((state) => state.cart);
   return (
     <div className=" flex">
         {

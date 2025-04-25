@@ -5,8 +5,6 @@ import { fetchProducts } from "../redux/features/product/productSlice";
 
 
 export default function useProduct() {
-    // const [page, setPage] = useState(1);
-
     const [path, setPath] = useState('/all/product/get');
     const dispatch = useDispatch();
     const { data, loading, error } = useSelector((state) => state.product);

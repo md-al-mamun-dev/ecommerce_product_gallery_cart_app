@@ -1,18 +1,10 @@
 "use client"
-import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setDeliveryOption } from "@/lib/redux/features/cart/cartSlice";
 
 export default function ShippingPartner() {
-    const {
-        items,
-        totalQuantity,
-        totalPrice,
-        deliveryOption,
-        currentItemQuentity,  
-    } = useSelector((state) => state.cart);
+    const { deliveryOption } = useSelector((state) => state.cart);
     const dispatch = useDispatch()
-    const [selectedOption, setSelectedOption] = useState('steadfast');
 
     const shippingOptions = [
         {
@@ -28,11 +20,6 @@ export default function ShippingPartner() {
           price: 80
         }
       ];
-      const handleOptionChange = (optionId) => {
-        setSelectedOption(optionId);
-        // You can also perform additional actions here
-        // like updating a form state or global store
-      };
 
   return (
     <div className="bg-white rounded-lg shadow p-6 mb-6">

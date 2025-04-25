@@ -1,18 +1,9 @@
 "use client"
 import CartItem from "./CartItem";
-import { useDispatch, useSelector } from "react-redux"
-
+import {  useSelector } from "react-redux"
 
 export default function CartGallery() {
-    const { 
-        items,
-        totalQuantity,
-        totalPrice,
-        currentItemQuentity,
-     } = useSelector((state) => state.cart);
-
-
-
+    const { items } = useSelector((state) => state.cart);
   return (
     <>
         {

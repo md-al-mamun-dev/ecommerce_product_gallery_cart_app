@@ -5,22 +5,19 @@ import { setError, setValue, removeFieldError } from "@/lib/redux/features/userI
 
 export default function InputForm() {
     const dispatch = useDispatch()
+
     const { errors  } = useSelector((state) => state.userInfo);
+    const [nameError, phoneError, addressError] = ['name', 'phone', 'address'].map(
+        field => errors.filter(item => item.field === field)
+      );
 
-     const nameError = errors.filter(item => item.field == "name")
-     const phoneError = errors.filter(item => item.field == "phone")
-     const addressError = errors.filter(item => item.field == "address")
-
-    const [userInfo, setUserInfo] = useState({
-                                                name:"",
+    const [userInfo, setUserInfo] = useState({  name:"",
                                                 phone:"",
-                                                address:"",
-                                            })
+                                                address:"", })
 
     function onInputChangeHandlar(event) {
         const name = event.target.name
-        const value = event.target.value
-        setUserInfo(prev => ({...prev, [name]:value}))
+        setUserInfo(prev => ({...prev, [name]:event.target.value}))
 
     }
 

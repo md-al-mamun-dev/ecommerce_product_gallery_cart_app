@@ -58,8 +58,7 @@ const { name, phone, orderId, t_stamp  } = await searchParams
     <div className="text-center">
         <Link href="/" className="px-8 py-3 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-lg transition duration-200 transform hover:-translate-y-0.5 mb-6">
             Continue Shopping
-        </Link>
-        
+        </Link>        
         <div className="mt-8">
             <p className="text-gray-500 mb-3">Share your purchase with friends</p>
             <p className="text-sm text-gray-400 mt-3">Get 10% off your next order when you share!</p>

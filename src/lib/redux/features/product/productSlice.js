@@ -15,17 +15,9 @@ export async function fetchProductById(productId) {
 
 const productSlice = createSlice({
   name: "product",
-  initialState: {
-                  data: [],
+  initialState: { data: [],
                   loading: false,
-                  error: null,
-                  // currentPage:1
-                },
-  // reducers: {
-  //     setPage(state, payload) {
-  //         state.page = payload;
-  //     },
-  //   }, 
+                  error: null },
   extraReducers: (builder) => {
     builder
       .addCase(fetchProducts.pending, (state) => {
@@ -45,5 +37,3 @@ const productSlice = createSlice({
 });
 
 export default productSlice.reducer;
-
-// export const { setPage } = productSlice.actions;

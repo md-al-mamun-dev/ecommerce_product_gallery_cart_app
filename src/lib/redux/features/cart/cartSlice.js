@@ -2,8 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import axiosInstance from "@/lib/axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-
-
 export const submitOrder = createAsyncThunk(
     'submitOrder/POST',
     async (data, { rejectWithValue }) => {
@@ -18,8 +16,7 @@ export const submitOrder = createAsyncThunk(
         return rejectWithValue(error.response.data);
       }
     }
-  );
-  
+  );  
 
 const cartSlice = createSlice({
     name: "cart",
@@ -131,7 +128,6 @@ const cartSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase('persist/REHYDRATE', (state, action) => {
-                // Recalculate totals when cart is rehydrated
                 if (action.payload?.cart?.items) {
                     state.totalQuantity = action.payload.cart.items.reduce(
                     (total, item) => total + item.quantity, 0
@@ -160,8 +156,7 @@ const cartSlice = createSlice({
             .addCase(submitOrder.rejected, (state, action) => {
                 state.status = 'failed';
                 state.orderRequest.error = action.payload?.message || 'Failed to submit cart';
-            });
-            
+            });            
       }
 })
 
