@@ -3,10 +3,6 @@ import ImageGallery from "./ImageGallery";
 import AddToCartButton from "./AddToCartButton";
 import QuentitySelector from "./QuentitySelector";
 
-
-
-
-
 export default async function page({ params }) {
     const { id } = await params
     const product = await getProductDetails(id)
@@ -67,9 +63,8 @@ export default async function page({ params }) {
       );
 }
 
-export const dynamic = 'force-dynamic'
 async function getProductDetails(id) {
-  const response = await fetch('https://admin.refabry.com/api/all/product/get', { cache: 'no-store' });
+  const response = await fetch('https://admin.refabry.com/api/all/product/get');
   const result = await response.json()
   return result.data.data.find((item) => item.id == id)
 }
