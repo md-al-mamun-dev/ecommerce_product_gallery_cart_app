@@ -10,7 +10,7 @@ export default function Pagination({ loading, error}) {
   if (error) return null;
 
   return (
-    <div className="flex items-center justify-between border-t border-gray-200 px-4 py-3 sm:px-6">
+    <div className="mt-10 flex items-center justify-between border-t border-gray-200 px-4 py-3 sm:px-6">
       <div className="flex flex-1 justify-between sm:hidden">
         {current_page > 1 
           && (<button onClick={fetchPreviousPage} className="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">
