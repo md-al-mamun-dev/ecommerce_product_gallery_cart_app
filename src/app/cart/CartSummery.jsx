@@ -2,13 +2,13 @@
 import { useSelector } from "react-redux"
 
 export default function CartSummery() {
-    const { totalPrice,  deliveryOption, tax } = useSelector((state) => state.cart);
+    const {items, totalPrice,  deliveryOption, tax } = useSelector((state) => state.cart);
     
   return (
     <>
         <div className="flex justify-between text-sm">
           <span>Subtotal</span>
-          <span>{totalPrice}</span>
+          <span>{items.length > 0 ? totalPrice : 0}</span>
         </div>
         <div className="flex justify-between text-sm">
           <span>Tax (0%)</span>
@@ -16,11 +16,11 @@ export default function CartSummery() {
         </div>
         <div className="flex justify-between text-sm">
           <span>Dalivery Charge</span>
-          <span>{deliveryOption.price}</span>
+          <span>{items.length > 0 ? deliveryOption.price : 0}</span>
         </div>
         <div className="flex justify-between font-bold text-lg">
           <span>Total</span>
-          <span>{totalPrice + tax + deliveryOption.price  }</span>
+          <span>{ items.length > 0 ? (totalPrice + tax + deliveryOption.price) : 0 }</span>
         </div>
     </>
   )

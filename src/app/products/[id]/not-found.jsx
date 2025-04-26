@@ -9,10 +9,7 @@ export default function NotFound() {
         <p className="text-gray-600 mb-6">
           This product doesn't exist or may have been removed.
         </p>
-        <Link
-          href="/products"
-          className="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full text-sm font-medium transition"
-        >
+        <Link href="/products" className="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full text-sm font-medium transition">
           Browse Products
         </Link>
       </div>

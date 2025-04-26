@@ -12,9 +12,7 @@ export default function Loading() {
       <div className="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-2 gap-10">
         {/* Left column */}
         <div className="space-y-4">
-          {/* Main product image */}
           <div className={`animate-pulse rounded-md bg-gray-200 w-full h-96 rounded-xl`}/>
-  
           {/* Image thumbnails carousel */}
           <div className="no-scrollbar w-full max-w-screen flex overflow-x-auto space-x-4 px-8 py-2 scrollbar-hide">
             {[...Array(6)].map((_, i) => (
@@ -28,8 +26,6 @@ export default function Loading() {
           <div>
             {/* Product title */}
             <div className={`animate-pulse rounded-md bg-gray-200 w-2/3 h-8 mb-4`}/>
-  
-            {/* Product description lines */}
             <div className="space-y-2 mb-6">
               {[...Array(4)].map((_, i) => (
                 <div className={`animate-pulse rounded-md bg-gray-200 w-full h-4`}/>

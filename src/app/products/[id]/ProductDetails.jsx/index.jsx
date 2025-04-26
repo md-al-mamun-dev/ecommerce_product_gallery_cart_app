@@ -31,7 +31,6 @@ export default function ProductDetails({id}) {
                     <QuentitySelector price={price} discount={discount_amount} isDiscount={is_discount == 1 }/>
                     <AddToCartButton data={data}/>
                 </div>
-            
             </>
   )
 }

@@ -27,12 +27,7 @@ export default function CartItem({data}) {
         <span className="text-md text-gray-500 dark:text-gray-400 font-semibold">{totalItemPrice}</span>
 
         <button onClick={()=> dispatch(removeFromCart(id))} className="ml-1 text-red-500 hover:text-red-700 group">
-            <svg 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg"
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
                 className="text-gray-400 group-hover:text-red-500 transition-colors duration-200"
             >
                 <path d="M6 19C6 20.1 6.9 21 8 21H16C17.1 21 18 20.1 18 19V7H6V19ZM19 4H15.5L14.5 3H9.5L8.5 4H5V6H19V4Z" fill="currentColor"/>

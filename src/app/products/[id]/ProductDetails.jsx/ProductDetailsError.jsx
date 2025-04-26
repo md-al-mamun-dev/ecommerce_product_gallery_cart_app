@@ -17,9 +17,7 @@ export default function ProductDetailsError({ message = "Something went wrong. P
         <h1 className="text-center mx-auto text-3xl font-bold text-gray-800 mt-10">Oops, something went wrong!</h1>
         <p className="text-gray-600 text-lg text-center">{message}</p>
         <div className="flex space-x-4 mt-4 mt-10 mx-auto justify-center">
-          <Link href="/"
-            className="px-6 py-2 bg-gray-300 rounded-md text-gray-700 hover:bg-gray-400"
-          >
+          <Link href="/" className="px-6 py-2 bg-gray-300 rounded-md text-gray-700 hover:bg-gray-400">
             Home
           </Link>
           <button
@@ -30,10 +28,6 @@ export default function ProductDetailsError({ message = "Something went wrong. P
           </button>
         </div>
       </div>
-        {/* Custom Error Icon (Triangle with exclamation mark) */}
-        
-  
-        
       </>
     );
   }

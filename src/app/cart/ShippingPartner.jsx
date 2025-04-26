@@ -31,7 +31,7 @@ export default function ShippingPartner() {
             key={option.id}
             className={`flex items-center p-4 border rounded-lg 
                           ${ isCartEmpty ? "border-gray-100 cursor-not-allowed" : "cursor-pointer hover:border-blue-500 "}
-                        ${ deliveryOption.id === option.id ? 'border-blue-500 bg-blue-50' : ''}`}
+                          ${ deliveryOption.id === option.id ? 'border-blue-500 bg-blue-50' : ''}`}
           >
             <input
               disabled={isCartEmpty}

@@ -79,12 +79,12 @@ async function getProductDetails(id) {
     const product = result.data.data.find((item) => item.id == id);
     
     if (!product) {
-      return null; // Triggers notFound()
+      return null; 
     }
     
     return product;
   } catch (error) {
     console.error('Fetch error:', error);
-    throw error; // Will be caught in the component's try/catch
+    throw error; 
   }
 }
